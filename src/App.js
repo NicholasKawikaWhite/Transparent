@@ -8,10 +8,18 @@ import {GoogleAuthProvider} from "firebase/auth"
 import './firebase'
 import { auth } from './firebase';
 import AlexModule from './modules/AlexPractice';
+import UserDashboard from './modules/userProfile';
 
 const provider = new GoogleAuthProvider();
 
 const isSignedIn = false;
+
+const user = {
+  id: 1,
+  username: "John",
+  email: "Hello@gmail.com",
+  profilePhoto: "https://i.ibb.co/9TQKqGS/headshot-alex.png"
+}
 
 
 
@@ -23,6 +31,7 @@ function App() {
       </header>
       <Home/>
       <AlexModule/>
+      <UserDashboard user={user}/>
     </div>
   );
 }
