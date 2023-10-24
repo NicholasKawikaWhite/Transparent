@@ -1,12 +1,12 @@
 import React, {useState} from "react"
-
+import "./AlexPractice.css"
 
 function AlexModule() {
     let ageNonHook = 10;
     const [age, setAge] = useState(10);
     return(
         <body>
-            <h1>Site Title</h1>
+            <h1 className="title">Site Title</h1>
             <p>Here we have some content</p>
             <p>{age}</p>
             <p>{ageNonHook}</p> 
