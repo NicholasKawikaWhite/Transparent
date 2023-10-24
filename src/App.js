@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './modules/Dashboard';
+import { Navbar } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './modules/Navbar';
+import {GoogleAuthProvider} from "firebase/auth"
+import './firebase'
+import { auth } from './firebase';
+import AlexModule from './modules/AlexPractice';
+
+const provider = new GoogleAuthProvider();
+
+const isSignedIn = false;
+
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <NavBar fixed="top" isSignedIn={isSignedIn} provider={provider} auth={auth}/>
       </header>
+      <Home/>
+      <AlexModule/>
     </div>
   );
 }
