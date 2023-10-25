@@ -9,6 +9,7 @@ import './firebase'
 import { auth } from './firebase';
 import AlexModule from './modules/AlexPractice';
 import UserDashboard from './modules/userProfile';
+import JobApplicationContent from './modules/applicationTracker';
 
 const provider = new GoogleAuthProvider();
 
@@ -30,8 +31,9 @@ function App() {
         <NavBar fixed="top" isSignedIn={isSignedIn} provider={provider} auth={auth}/>
       </header>
       <Home/>
-      <AlexModule/>
+      {/* <AlexModule/> */}
       <UserDashboard user={user}/>
+      <JobApplicationContent/>
     </div>
   );
 }
